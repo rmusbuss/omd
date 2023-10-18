@@ -1,5 +1,7 @@
 import csv
 from typing import Iterable, Optional, Union
+
+
 # from pprint import pprint
 
 
@@ -77,7 +79,7 @@ def salary_in_departments(hierarchy_dict_unique: dict, data: list) -> list:
     return final_list
 
 
-def solution(filename: str = 'Corp_Summary.csv') -> Optional[Union[list, dict]]:
+def solution(filename: str = 'Corp_Summary.csv') -> str:
     """
     Это итоговая функция
     Она принимает на вход имя файла с данными,
@@ -112,20 +114,24 @@ def solution(filename: str = 'Corp_Summary.csv') -> Optional[Union[list, dict]]:
         # pprint(departments_dict)
         # В качестве вывода можно сделать pprint()
         # чтобы иерархия красиво выводилась
-        return departments_dict
+        return '\n'.join([f'В департаменте {key} работают команды \
+{", ".join(value)}' for key, value in departments_dict.items()])
     elif choose == '2':
         final_list = salary_in_departments(hierarchy_dict_unique, data)
         # pprint(final_dict)
         # В качестве вывода можно сделать pprint()
         # чтобы иерархия красиво выводилась
-        return final_list
+        return '\n'.join([f'В департаменте {dep} работают сотрудники в \
+количестве {num}, вилка заработных плат {sal_range}, а средняя зп {av_sal:.2f}'
+                          for dep, num, sal_range, av_sal in final_list[1:]])
     elif choose == '3':
         final_list = salary_in_departments(hierarchy_dict_unique, data)
         save_csv(final_list)
-        # return 'Saving completed'
+        return 'Результаты сохранены в файл solution.csv'
     else:
         print('Вы ввели неверную команду. Попробуйте еще раз')
         return solution(filename)
 
 
-print(solution())
+if __name__ == '__main__':
+    print(solution())
