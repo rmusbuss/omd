@@ -1,6 +1,3 @@
-from typing import Optional
-
-
 class CountVectorizer:
     """
     Это класс, который имеет два метода fit_transform и get_feature_names
@@ -33,7 +30,7 @@ class CountVectorizer:
         self.feature_names = list(self.dictionary.keys())
         return self.feature_names
 
-    def get_feature_names(self) -> list[Optional[list[int]]]:
+    def get_feature_names(self) -> list[list[int]]:
         """
         Этот метод ничего не принимает на вход, строит терм-документную матрицу
         и возвращает ее
