@@ -41,6 +41,7 @@ class CountVectorizer:
         word_indices = dict(zip(self.feature_names,
                                 range(len(self.feature_names))))
         # enumerate here
+        # second
         for sent_num, sentence in enumerate(self.corpus):
             sentence = sentence.split()
             for word in sentence:
