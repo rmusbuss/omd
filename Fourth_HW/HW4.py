@@ -14,10 +14,17 @@ class CountVectorizer:
         self.corpus = None
         self.dictionary = {}
 
-    def fit_transform(self, corpus: list[str]) -> list[str]:
+    def get_feature_names(self) -> list[str]:
         """
-        Этот метод принимает на вход предложения из слов
+        Этот метод ничего не принимает на вход
         и возвращает уникальные слова в виде списка
+        """
+        return self.feature_names
+
+    def fit_transform(self, corpus: list[str]) -> list[list[int]]:
+        """
+        Этот метод принимает на вход предложения из слов,
+        строит терм-документную матрицу и возвращает ее
         """
         self.corpus = corpus
         sentences_num = len(corpus)
@@ -28,14 +35,6 @@ class CountVectorizer:
                     self.dictionary.get(word, [0] * sentences_num)
                 self.dictionary[word][sent_num] += 1
         self.feature_names = list(self.dictionary.keys())
-        return self.feature_names
-
-    def get_feature_names(self) -> list[list[int]]:
-        """
-        Этот метод ничего не принимает на вход, строит терм-документную матрицу
-        и возвращает ее
-        """
-        sentences_num = len(self.corpus)
         words_num = len(self.feature_names)
         term_matrix = [[0] * words_num for _ in range(sentences_num)]
         word_indices = dict(zip(self.feature_names,
