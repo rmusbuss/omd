@@ -40,6 +40,7 @@ class CountVectorizer:
         term_matrix = [[0] * words_num for _ in range(sentences_num)]
         word_indices = dict(zip(self.feature_names,
                                 range(len(self.feature_names))))
+        # enumerate here
         for sent_num, sentence in enumerate(self.corpus):
             sentence = sentence.split()
             for word in sentence:
