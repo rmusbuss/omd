@@ -1,0 +1,24 @@
+
+===================================
+Команда:
+===================================
+python -m unittest -v Test_one_hot_encoder.py
+
+
+
+===================================
+Результат:
+===================================
+
+test_ohe1 (Test_one_hot_encoder.TestOneHotEncoder) ... ok
+test_ohe2 (Test_one_hot_encoder.TestOneHotEncoder) ... ok
+test_ohe3 (Test_one_hot_encoder.TestOneHotEncoder) ... ok
+test_ohe4 (Test_one_hot_encoder.TestOneHotEncoder) ... ok
+test_ohe5 (Test_one_hot_encoder.TestOneHotEncoder) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+
+

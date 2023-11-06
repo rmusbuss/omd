@@ -1,0 +1,27 @@
+
+===================================
+Команда:
+===================================
+python -m pytest -v Test_one_hot_encoder_pytest.py 
+
+
+
+===================================
+Результат:
+===================================
+
+====================================== test session starts ======================================
+platform darwin -- Python 3.10.7, pytest-7.4.3, pluggy-1.3.0 -- /AAA/Python/seminars/bin/python
+cachedir: .pytest_cache
+rootdir: /AAA/Python/seminars
+collected 5 items                                                                               
+
+Test_one_hot_encoder_pytest.py::test_ohe1 PASSED                                          [ 20%]
+Test_one_hot_encoder_pytest.py::test_ohe2 PASSED                                          [ 40%]
+Test_one_hot_encoder_pytest.py::test_ohe3 PASSED                                          [ 60%]
+Test_one_hot_encoder_pytest.py::test_ohe4 PASSED                                          [ 80%]
+Test_one_hot_encoder_pytest.py::test_ohe5 PASSED                                          [100%]
+
+======================================= 5 passed in 0.02s =======================================
+
+
