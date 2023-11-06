@@ -1,0 +1,41 @@
+
+===================================
+Команда1:
+===================================
+python -m pytest -q Mock_test_year.py --cov=what_is_year_now 
+
+
+
+===================================
+Результат1:
+===================================
+
+
+...                                                                                       [100%]
+
+---------- coverage: platform darwin, python 3.10.7-final-0 ----------
+Name                  Stmts   Miss  Cover
+-----------------------------------------
+what_is_year_now.py      21      0   100%
+-----------------------------------------
+TOTAL                    21      0   100%
+
+3 passed in 0.09s
+
+
+===================================
+Команда2:
+===================================
+python -m pytest -q Mock_test_year.py --cov=what_is_year_now --cov-report html
+
+
+
+===================================
+Результат2:
+===================================
+...                                                                                       [100%]
+
+---------- coverage: platform darwin, python 3.10.7-final-0 ----------
+Coverage HTML written to dir htmlcov
+
+3 passed in 0.14s
